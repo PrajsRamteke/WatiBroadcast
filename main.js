@@ -41,7 +41,7 @@ askConfirmation();
 // sendTemplateMessageForEndpoint();
 
 async function sendTemplateMessageForEndpoint() {
-  const phonePosterMap = await readCSV(config.csvFilePath);
+  const phonePosterMap = await readCSV(`./csv/${config.csvFilePath}`);
   const numbers = Object.keys(phonePosterMap);
   const batchesWithReceivers = chunkArray(numbers, phonePosterMap, 5000);
 
